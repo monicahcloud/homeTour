@@ -1,6 +1,7 @@
 # Home Tour
 
-#Instructions
+# Instructions
+
 For now, we're just going to create the shell for our project, based on what we understand of the requirements. Later, as your skills improve and you continue to learn, you'll probably make changes to these classes or their structure - a process called refactoring - to make your project easier to expand.
 
 Create a project named HomeTour. In the HomeTour project, create the following packages and classes: fixtures - fixtures.Fixture (abstract) - fixtures.Room game - game.Main - game.Player - game.RoomManager These classes will work as follows:
