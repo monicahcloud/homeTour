@@ -2,7 +2,7 @@ package fixtures;
 
 public class Room extends Fixture {
 	
-	Room[]exits = new Room[4];
+	private Room[]exits;
 	//{north, south, east, west}
 	//{0, 1, 2, 3}
 	

@@ -1,65 +1,88 @@
 package game;
 
-import fixtures.Room;
-import fixtures.Fixture;
 import java.util.Scanner;
 
 public class Main {
 	
 	static Scanner collectInput = new Scanner(System.in);
+	static RoomManager roomManager = new RoomManager();
+	static Player player = new Player();
 	
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome Home!");
+		roomManager.init();
 		
+		player.setCurrentRoom(roomManager.getStartingRoom());
 		
 		//boolean variable to keep playing until the conditions are met for the game to stop
-		boolean touring = true;
+//		boolean touring = true;
 	
-		GAME:
-			while(touring) {
+	
+			while(true) {
 				System.out.println("***********************************");
-				System.out.println("Would you like to take a tour?\n\nIf so, answer yes.");
-				String answer = collectInput.next();
+//				System.out.println("Would you like to continue with the tour?\n\nIf so, answer yes.");
+//				String answer = collectInput.nextLine();
 				
-				if (answer.equals("yes")) {
-				System.out.println("You are in the " + " room.");
-				System.out.println("Which room would you like to enter?");
-			
-			}			
-				else if (answer.equals("no")) {
-					touring = false;
-				
-				System.out.println("See ya next time!");
-			
-				}
+//				if (answer.equals("yes")) {
+				printRoom(player);
+				System.out.println("\nWhat would you like to do? ");
+				String [] userInput = collectInput();
+				parse(userInput, player); 
+		
 			}
-	}
+	
 	}//end of main method
 	
-//private static void printRoom(Player player) {
-//	
-//}
+private static void printRoom(Player player) {
+	
+	System.out.println(player.getCurrentRoom().getName());
+	System.out.println(player.getCurrentRoom().getLongDescription());
+	System.out.println("\nExits:");
+	
+	if(player.getCurrentRoom().getExit("north") != null) {
+		System.out.println("North: " + player.getCurrentRoom().getExit("north").getShortDescription());
+	}
+	if(player.getCurrentRoom().getExit("south") != null) {
+		System.out.println("South: " + player.getCurrentRoom().getExit("south").getShortDescription());
+	}
+	if(player.getCurrentRoom().getExit("east") != null) {
+		System.out.println("East: " + player.getCurrentRoom().getExit("east").getShortDescription());
+	}
+	if(player.getCurrentRoom().getExit("west") != null) {
+		System.out.println("West: " + player.getCurrentRoom().getExit("west").getShortDescription());
+	}
+}
 
-//
-//private static String[] collectInput() {
-//	
-//
-//}
-//
-//
-// public static Scanner getCollectInput() {
-//	return this.collectInput = collectInput;
-//}
-//
-// 
-//public static void setCollectInput(Scanner collectInput) {
-//	Main.collectInput = collectInput;
 
-//
-//private static void parse(String[] command, Player player) {
-//	
-//	
- 
+private static String[] collectInput() {
+	String input = collectInput.nextLine();
+	String [] inputArray = input.split(" ");
+	return inputArray;
 
+}
+
+private static void parse(String[] command, Player player) {
+
+	if(command[0].equals("quit")) {
+		System.out.println("Thanks for playing.");
+		System.exit(0);
+	}
+	
+ switch(command[1]) {
+ case "north":
+	 player.setCurrentRoom(player.getCurrentRoom().getExit("north"));
+	 break;
+ case "south":
+	 player.setCurrentRoom(player.getCurrentRoom().getExit("south"));
+	 break;
+ case "east":
+	 player.setCurrentRoom(player.getCurrentRoom().getExit("east"));
+	 break;
+ case "west":
+	 player.setCurrentRoom(player.getCurrentRoom().getExit("west"));
+	 break;
+ }
+}
+}
 //end of main class
