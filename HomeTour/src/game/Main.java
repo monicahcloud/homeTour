@@ -14,17 +14,9 @@ public class Main {
 		roomManager.init();
 		
 		player.setCurrentRoom(roomManager.getStartingRoom());
-		
-		//boolean variable to keep playing until the conditions are met for the game to stop
-//		boolean touring = true;
-	
 	
 			while(true) {
 				System.out.println("***********************************");
-//				System.out.println("Would you like to continue with the tour?\n\nIf so, answer yes.");
-//				String answer = collectInput.nextLine();
-				
-//				if (answer.equals("yes")) {
 				printRoom(player);
 				System.out.println("\nWhat would you like to do? ");
 				String [] userInput = collectInput();
@@ -38,7 +30,7 @@ private static void printRoom(Player player) {
 	
 	System.out.println(player.getCurrentRoom().getName());
 	System.out.println(player.getCurrentRoom().getLongDescription());
-	System.out.println("\nExits:");
+	System.out.println("\n\nExits:\n");
 	
 	if(player.getCurrentRoom().getExit("north") != null) {
 		System.out.println("North: " + player.getCurrentRoom().getExit("north").getShortDescription());

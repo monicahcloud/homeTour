@@ -9,20 +9,19 @@ public class RoomManager {
 	public void init () {
 		Room foyer = new Room("The Foyer" + "\n",  
 				"a long, wide walkway", "\n"
-	+"The main entryway into a grand room"+ "\n" 
-	+ "The kitchen is open to the west, where a large island separates the kitchen from the living room." + "\n"
+	+"The main entryway into a grand room. The kitchen is open to the west, where a large island separates the kitchen from the living room." + "\n"
 	+ "The hardwood floor expands the length of the entire area including the kitchen and living room." + "\n" 
-	+ " To the north is the only bathroom in the condo. " );
+	+ "To the north is the only bathroom in the condo. " );
 		
 		Room livingRoom = new Room("Living Room" + "\n", 
 				"Large Living Room ",
 				"The Living Room  with marble fireplace used for entertaining friends, talking, reading or watching TV" + "\n"
 				+ "The hardwood floor leads west into the kitchen"
 				+  "To the north is the only bathroom in the home and bedroom2");
-		Room kitchen = new Room("Kitchen", "Gourmet Kitchen.",  "The hardwood floor extends into this gourmet kitchen w/breakfast area w/tons of cabinet space." );
+		Room kitchen = new Room("Kitchen", "Gourmet Kitchen",  "The hardwood floor extends into this gourmet kitchen w/breakfast area w/tons of cabinet space." );
 		Room bathroom = new Room("Bathroom", "Large, beautiful bathroom", "This supersized, elegant bathroom is a dream for anyone." + 
-		"\nIt is a Jack and Jill style bathroom with doors leading to both bedrooms. It has two separate vanities next to the corresponding door. The toilet is in its own closet. The shower is a walkin shower and it also has a claw foot table. ");
-		Room master = new Room("The Master Bedroom", "The Master Bedroom ",  " Huge master suite w/sitting area, and walk in closet ");
+		"\nIt has two separate vanities next to the corresponding door. The toilet is in its own closet. The shower is a walkin shower and it also has a claw foot table. ");
+		Room master = new Room("The Master Bedroom", "The Master Bedroom ",  "Huge master suite w/sitting area, and walk in closet.");
 		
 		this.startingRoom = foyer;
 		
