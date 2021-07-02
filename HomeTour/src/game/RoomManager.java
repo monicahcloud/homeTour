@@ -18,7 +18,7 @@ public class RoomManager {
 				"The Living Room  with marble fireplace used for entertaining friends, talking, reading or watching TV" + "\n"
 				+ "The hardwood floor leads west into the kitchen"
 				+  "To the north is the only bathroom in the home and bedroom2");
-		Room kitchen = new Room("Kitchen", "Gourmet Kitchen",  "The hardwood floor extends into this gourmet kitchen w/breakfast area w/tons of cabinet space." );
+		Room kitchen = new Room("Kitchen", "Gourmet Kitchen",  "The gourmet kitchen w/breakfast area w/tons of cabinet space." );
 		Room bathroom = new Room("Bathroom", "Large, beautiful bathroom", "This supersized, elegant bathroom is a dream for anyone." + 
 		"\nIt has two separate vanities next to the corresponding door. The toilet is in its own closet. The shower is a walkin shower and it also has a claw foot table. ");
 		Room master = new Room("The Master Bedroom", "The Master Bedroom ",  "Huge master suite w/sitting area, and walk in closet.");
