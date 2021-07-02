@@ -18,7 +18,7 @@ public class Main {
 			while(true) {
 				System.out.println("***********************************");
 				printRoom(player);
-				System.out.println("\nWhat would you like to do? ");
+				System.out.println("\nWhere would you like to go? \nEnter one: go north, go south, go east, or go west");
 				String [] userInput = collectInput();
 				parse(userInput, player); 
 		
